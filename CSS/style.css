@@ -1,0 +1,172 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --primarycolorbg: black;
+    --maincolortext: white;
+    --mainfont: sans-serif;
+}
+
+
+header {
+    width: 100%;
+    height: 52px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-family: var(--mainfont);
+    background-color: var(--primarycolorbg);
+    color: var(--maincolortext);
+}
+.geoLocation{
+    margin-right: 20px;
+}
+
+#background {
+    width: 100%;
+    height: 84vh;
+    position: absolute;
+    top: 52px;
+    /* background-image: url("../Resources/dayStorm.jpg"); */
+    /* background-image: url(../Resources/dayCloudy.jpg); */
+    /* background-image: url(../Resources/dayRain.jpg); */
+    /* background-image: url(../Resources/daySunny.jpg); */
+    /* background-image: url(../Resources/daySnow.jpg); */
+    /* background-image: url(../Resources/nightCloudy.jpg); */
+    /* background-image: url(../Resources/nightRain.jpg); */
+    /* background-image: url(../Resources/nightStorm.jpg); */
+    /* background-image: url(../Resources/nightSnow.jpg); */
+    /* background-image: url(../Resources/nightClear.jpg); */
+    opacity: 0.8;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#weatherDetails {
+    position: absolute;
+    top: 52px;
+    height: 550px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    font-family: var(--mainfont);
+
+}
+
+#currentWeatherContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100px;
+    margin-left: 100px;
+}
+
+
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ position: absolute;
+ bottom: 0px;
+    width: 100%;
+    height:52px ;
+    background-color: var(--primarycolorbg);
+     color: var(--maincolortext);
+     font-family: var(--mainfont);
+}
+
+table {
+    margin: auto;
+    
+}
+
+table,
+th,
+td {
+    border-radius: 10px;
+    border: 1px solid white;
+    color: white;
+    background-color: black;
+    border-collapse: collapse;
+    padding: 10px;
+    width: 1000px;
+
+}
+
+
+/* Responsiveness*/
+@media screen and (max-width:1143px) {
+    .geoLocation{
+        font-size: 16px;
+    }
+    table{
+        width: 700px;
+        font-size: 12px;
+    } 
+    .sevenDaysDatesContainer td{
+        font-size: 12px;
+    }
+    footer{
+        font-size: 12px;
+    }
+}
+@media screen and (max-width:737px) {
+    table{
+        width: 500px;
+        font-size: 8px;
+    } 
+    .sevenDaysDatesContainer td{
+        font-size: 8px;
+    }
+    footer{
+        font-size: 12px;
+    }
+}
+@media screen and (max-width:520px) {
+    .geoLocation{
+        font-size: 12px;
+    }
+    table{
+        width: 400px;
+        font-size: 7px;
+    } 
+    .sevenDaysDatesContainer td{
+        font-size: 7px;
+    }
+    footer{
+        font-size: 12px;
+    }
+}
+@media screen and (max-width:420px) {
+    table{
+        width: 310px;
+        font-size: 7px;
+    } 
+    .sevenDaysDatesContainer td{
+        font-size: 7px;
+    }
+    footer{
+        font-size: 12px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+.display-none {
+    display: none;
+}
+
+.display-flex {
+    display: flex;
+}
