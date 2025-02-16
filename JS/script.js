@@ -96,54 +96,54 @@ document.querySelector(".currentWeatherStatus").style.color=`${textColor}`
 
 
     if (weathercode === 0 || weathercode === 1) {
-        const backgroundImgUrl=dayStatus==="Day"?'../Resources/daySunny.jpg':'../Resources/nightClear.jpg';
+        const backgroundImgUrl=dayStatus==="Day"?'/Resources/daySunny.jpg':'/Resources/nightClear.jpg';
         backgroundImg.style.backgroundImage=`url(${backgroundImgUrl})`
         return "Clear sky ☁️";
 
     } else if (weathercode === 2 || weathercode === 3) {
-         const backgroundImgUrl=dayStatus==="Day"?'../Resources/dayCloudy.jpg':'../Resources/nightCloudy.jpg';
+         const backgroundImgUrl=dayStatus==="Day"?'/Resources/dayCloudy.jpg':'/Resources/nightCloudy.jpg';
         backgroundImg.style.backgroundImage=`url(${backgroundImgUrl})`
         return "Cloudy ☁️";
     } else if (weathercode === 45 || weathercode === 48) {
-        const backgroundImgUrl=dayStatus==="Day"?'../Resources/dayCloudy.jpg':'../Resources/nightCloudy.jpg';
+        const backgroundImgUrl=dayStatus==="Day"?'/Resources/dayCloudy.jpg':'/Resources/nightCloudy.jpg';
         backgroundImg.style.backgroundImage=`url(${backgroundImgUrl})`
         return "Fog 🌫️";
     } else if (weathercode >= 51 && weathercode <= 55) {
-        const backgroundImgUrl=dayStatus==="Day"?'../Resources/dayRain.jpg':'../Resources/nightRain.jpg';
+        const backgroundImgUrl=dayStatus==="Day"?'/Resources/dayRain.jpg':'/Resources/nightRain.jpg';
         backgroundImg.style.backgroundImage=`url(${backgroundImgUrl})`
         return "Rain Showers 🌧️";
     } else if (weathercode >= 56 && weathercode <= 57) {
-         const backgroundImgUrl=dayStatus==="Day"?'../Resources/dayRain.jpg':'../Resources/nightRain.jpg';
+         const backgroundImgUrl=dayStatus==="Day"?'/Resources/dayRain.jpg':'/Resources/nightRain.jpg';
         backgroundImg.style.backgroundImage=`url(${backgroundImgUrl})`
         return "Freezing Rain ❄️";
     } else if (weathercode === 61 || weathercode === 63 || weathercode === 65) {
-         const backgroundImgUrl=dayStatus==="Day"?'../Resources/dayRain.jpg':'../Resources/nightRain.jpg';
+         const backgroundImgUrl=dayStatus==="Day"?'/Resources/dayRain.jpg':'/Resources/nightRain.jpg';
         backgroundImg.style.backgroundImage=`url(${backgroundImgUrl})`
         return "Rain 🌧️";
     } else if (weathercode === 66 || weathercode === 67) {
-         const backgroundImgUrl=dayStatus==="Day"?'../Resources/dayRain.jpg':'../Resources/nightRain.jpg';
+         const backgroundImgUrl=dayStatus==="Day"?'/Resources/dayRain.jpg':'/Resources/nightRain.jpg';
         backgroundImg.style.backgroundImage=`url(${backgroundImgUrl})`
         return "Freezing Rain ❄️";
     } else if (weathercode === 71 || weathercode === 73 || weathercode === 75) {
-         const backgroundImgUrl=dayStatus==="Day"?'../Resources/daySnow.jpg':'../Resources/nightSnow.jpg';
+         const backgroundImgUrl=dayStatus==="Day"?'/Resources/daySnow.jpg':'/Resources/nightSnow.jpg';
         backgroundImg.style.backgroundImage=`url(${backgroundImgUrl})`
         return "Snow Showers ❄️";
     } else if (weathercode === 77) {
-        const backgroundImgUrl=dayStatus==="Day"?'../Resources/daySnow.jpg':'../Resources/nightSnow.jpg';
+        const backgroundImgUrl=dayStatus==="Day"?'/Resources/daySnow.jpg':'/Resources/nightSnow.jpg';
         backgroundImg.style.backgroundImage=`url(${backgroundImgUrl})`
         return "Snow Grains ❄️";
     } else if (weathercode === 80 || weathercode === 81 || weathercode === 82) {
         return "Thunderstorm ⛈️";
     } else if (weathercode === 85 || weathercode === 86) {
-        const backgroundImgUrl=dayStatus==="Day"?'../Resources/daySnow.jpg':'../Resources/nightSnow.jpg';
+        const backgroundImgUrl=dayStatus==="Day"?'/Resources/daySnow.jpg':'/Resources/nightSnow.jpg';
         backgroundImg.style.backgroundImage=`url(${backgroundImgUrl})`
         return "Snow ❄️";
     } else if (weathercode === 95) {
-        const backgroundImgUrl=dayStatus==="Day"?'../Resources/dayStorm.jpg':'../Resources/nightStorm.jpg';
+        const backgroundImgUrl=dayStatus==="Day"?'/Resources/dayStorm.jpg':'/Resources/nightStorm.jpg';
         backgroundImg.style.backgroundImage=`url(${backgroundImgUrl})`
         return "Thunderstorm ⛈️";
     } else if (weathercode === 96 || weathercode === 99) {
-         const backgroundImgUrl=dayStatus==="Day"?'../Resources/dayStorm.jpg':'../Resources/nightStorm.jpg';
+         const backgroundImgUrl=dayStatus==="Day"?'/Resources/dayStorm.jpg':'/Resources/nightStorm.jpg';
         backgroundImg.style.backgroundImage=`url(${backgroundImgUrl})`
         return "Thunderstorm with Hail ⛈️";
     } else{
