@@ -197,7 +197,7 @@ sevenDaysWeatherCodes.forEach((weatherCode)=>{
         let weatherStatus = "";
     
         if (weathercode === 0 || weathercode === 1) {
-            weatherStatus = "Clear sky ☀️";
+            weatherStatus = "Clear sky ☁️"
         } else if (weathercode === 2 || weathercode === 3) {
             weatherStatus = "Cloudy ☁️";
         } else if (weathercode === 45 || weathercode === 48) {
