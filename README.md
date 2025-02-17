@@ -1,6 +1,4 @@
-Here's your `README.md` for **Weather Vibe** in the same structured format:  
 
----
 
 # Weather Vibe  
 
