@@ -38,7 +38,7 @@ const userGeoLocation = () => {
             },
             (error) => {
                 console.error("Error getting location:", error.message);
-                document.querySelector("#weatherDetails").innerHTML=`<h2 style="margin:10px;color:red;">You must have to allow your location for current weather</h2>`
+                document.querySelector("#weatherDetails").innerHTML=`<h2 style="text-align:center;color:red;">You must have to allow your location for current weather</h2>`
                 reject(error);
             }
         );
@@ -170,71 +170,65 @@ const sevenDaysWeatherCodes=weatherData.daily.weathercode
 const sevenDaysForecastMax=weatherData.daily.temperature_2m_max
 const sevenDaysForecastMin=weatherData.daily.temperature_2m_min
 
-// console.log(sevenDaysForecastMax)
-// console.log(sevenDaysForecastMin)
 
-sevenDaysDates.forEach((date)=>{
-    const dateElement=document.createElement("th")
-    dateElement.innerText=`${date}`
-    document.querySelector(".sevenDaysDatesContainer").appendChild(dateElement)
-   
-})
-sevenDaysForecastMin.forEach((minWeather)=>{
-    const minWeatherElement=document.createElement("td")
-    minWeatherElement.innerText=`${minWeather}°C`
-    document.querySelector(".sevenDaysForecastMin").appendChild(minWeatherElement)
-   
-})
-sevenDaysForecastMax.forEach((maxWeather)=>{
-    const maxWeatherElement=document.createElement("td")
-    maxWeatherElement.innerText=`${maxWeather}°C`
-    document.querySelector(".sevenDaysForecastMax").appendChild(maxWeatherElement)
-   
-})
-sevenDaysWeatherCodes.forEach((weatherCode)=>{
 
+
+for (let i = 0; i <7; i++) {
+    const divNextWeather=document.createElement("div")
+    divNextWeather.classList.add("divNextWeather")
+    const nextWeatherDate=sevenDaysDates[i]
+    const nextWeatherForecastMax=sevenDaysForecastMax[i]
+    const nextWeatherForecastMin=sevenDaysForecastMin[i]
+  
     const nextWeatherCodeHandler = (weathercode) => {
-        let weatherStatus = "";
+        let nextWeatherStatus = "";
     
         if (weathercode === 0 || weathercode === 1) {
-            weatherStatus = "Clear sky ☁️"
+            nextWeatherStatus = "Clear sky ☁️"
         } else if (weathercode === 2 || weathercode === 3) {
-            weatherStatus = "Cloudy ☁️";
+            nextWeatherStatus = "Cloudy ☁️";
         } else if (weathercode === 45 || weathercode === 48) {
-            weatherStatus = "Fog 🌫️";
+            nextWeatherStatus = "Fog 🌫️";
         } else if (weathercode >= 51 && weathercode <= 55) {
-            weatherStatus = "Rain Showers 🌧️";
+            nextWeatherStatus = "Rain Showers 🌧️";
         } else if (weathercode >= 56 && weathercode <= 57) {
-            weatherStatus = "Freezing Rain ❄️";
+            nextWeatherStatus = "Freezing Rain ❄️";
         } else if (weathercode === 61 || weathercode === 63 || weathercode === 65) {
-            weatherStatus = "Rain 🌧️";
+            nextWeatherStatus= "Rain 🌧️";
         } else if (weathercode === 66 || weathercode === 67) {
-            weatherStatus = "Freezing Rain ❄️";
+            nextWeatherStatus = "Freezing Rain ❄️";
         } else if (weathercode === 71 || weathercode === 73 || weathercode === 75) {
-            weatherStatus = "Snow Showers ❄️";
+            nextWeatherStatus = "Snow Showers ❄️";
         } else if (weathercode === 77) {
-            weatherStatus = "Snow Grains ❄️";
+            nextWeatherStatus = "Snow Grains ❄️";
         } else if (weathercode === 80 || weathercode === 81 || weathercode === 82) {
-            weatherStatus = "Thunderstorm ⛈️";
+            nextWeatherStatus = "Thunderstorm ⛈️";
         } else if (weathercode === 85 || weathercode === 86) {
-            weatherStatus = "Snow ❄️";
+            nextWeatherStatus = "Snow ❄️";
         } else if (weathercode === 95) {
-            weatherStatus = "Thunderstorm ⛈️";
+            nextWeatherStatus = "Thunderstorm ⛈️";
         } else if (weathercode === 96 || weathercode === 99) {
-            weatherStatus = "Thunderstorm with Hail ⛈️";
+            nextWeatherStatus= "Thunderstorm with Hail ⛈️";
         } else {
-            weatherStatus = "Unknown Weather 🤷";
+            nextWeatherStatus= "Unknown Weather 🤷";
         }
-        
-        const weatherElement=document.createElement("td")
-        weatherElement.innerText=`${weatherStatus}`
-        document.querySelector(".sevenDaysWeatherStatus").appendChild(weatherElement)
-        return weatherStatus;
+        return nextWeatherStatus
+       
     };
+   
+   
+    divNextWeather.innerHTML=`
+    <span class="nextWeatherDisc">${nextWeatherDate}</span>
+    <span class="nextWeatherDisc">Min: ${nextWeatherForecastMin}</span>
+    <span class="nextWeatherDisc">Max: ${nextWeatherForecastMax}</span>
+    <span class="nextWeatherDisc" style="font-size:18px; color:var(--maincolortext);">${nextWeatherCodeHandler(sevenDaysWeatherCodes[i])}</span> 
     
-    nextWeatherCodeHandler(weatherCode)
     
-})
+    `
+    document.querySelector("#nextDaysForecast").appendChild(divNextWeather)
+    
+  }
+  
 
 
 

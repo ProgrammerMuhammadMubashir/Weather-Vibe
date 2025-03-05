@@ -8,7 +8,9 @@
     --maincolortext: white;
     --mainfont: sans-serif;
 }
-
+body{
+    overflow-y: hidden;
+}
 
 header {
     width: 100%;
@@ -19,6 +21,7 @@ header {
     font-family: var(--mainfont);
     background-color: var(--primarycolorbg);
     color: var(--maincolortext);
+    z-index: 10000;
 }
 .geoLocation{
     margin-right: 20px;
@@ -26,7 +29,7 @@ header {
 
 #background {
     width: 100%;
-    height: 84vh;
+    height:150dvh;
     position: absolute;
     top: 52px;
     /* background-image: url("../Resources/dayStorm.jpg"); */
@@ -42,6 +45,7 @@ header {
     opacity: 0.8;
     background-size: cover;
     background-repeat: no-repeat;
+   
 }
 
 #weatherDetails {
@@ -63,92 +67,67 @@ header {
     justify-content: space-between;
     height: 100px;
     margin-left: 100px;
+    position: relative;
 }
 
-
-footer{
-    display: flex;
+#nextDaysForecast{
+     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
- position: absolute;
- bottom: 0px;
-    width: 100%;
-    height:52px ;
-    background-color: var(--primarycolorbg);
-     color: var(--maincolortext);
-     font-family: var(--mainfont);
-}
-
-table {
-    margin: auto;
-    
-}
-
-table,
-th,
-td {
-    border-radius: 10px;
-    border: 1px solid white;
-    color: white;
-    background-color: black;
-    border-collapse: collapse;
-    padding: 10px;
-    width: 1000px;
+height: 50%;
+position: relative;
+top: 102px;
 
 }
+
+
 
 
 /* Responsiveness*/
+@media screen and (max-width:1300px) {
+    #nextDaysForecast{
+        flex-direction: column;
+    }
+    .divNextWeather{
+        position: relative;
+   top: 340px;
+z-index: 1000;
+    }
+    body{
+        overflow-y: scroll;
+    }
+}
 @media screen and (max-width:1143px) {
     .geoLocation{
         font-size: 16px;
     }
-    table{
-        width: 700px;
-        font-size: 12px;
-    } 
-    .sevenDaysDatesContainer td{
-        font-size: 12px;
-    }
-    footer{
+  
+    
+    footer,.divNextWeather{
         font-size: 12px;
     }
 }
 @media screen and (max-width:737px) {
-    table{
-        width: 500px;
-        font-size: 8px;
-    } 
-    .sevenDaysDatesContainer td{
-        font-size: 8px;
-    }
+  
+  
     footer{
         font-size: 12px;
     }
+ 
 }
 @media screen and (max-width:520px) {
-    .geoLocation{
+    .geoLocation,.divNextWeather{
         font-size: 12px;
     }
-    table{
-        width: 400px;
-        font-size: 7px;
-    } 
-    .sevenDaysDatesContainer td{
-        font-size: 7px;
-    }
+   
+  
     footer{
         font-size: 12px;
     }
 }
 @media screen and (max-width:420px) {
-    table{
-        width: 310px;
-        font-size: 7px;
-    } 
-    .sevenDaysDatesContainer td{
-        font-size: 7px;
-    }
+ 
     footer{
         font-size: 12px;
     }
@@ -169,4 +148,22 @@ td {
 
 .display-flex {
     display: flex;
+}
+.nextWeatherDisc{
+    padding: 5px;
+  
+font-family: var(--mainfont);
+color:rgb(177, 177, 177);
+}
+.divNextWeather{
+    background-color: var(--primarycolorbg);
+   display: flex;
+   flex-direction: column;
+   
+   padding: 14px;
+   width: 120px;
+ height: 120px;
+   margin: 20px;
+   border-radius: 4px;
+   
 }
