@@ -28,8 +28,9 @@ header {
 }
 
 #background {
-    width: 100%;
-    height:180dvh;
+    width: 100vw;
+    height:200vh;
+    /* object-fit: cover; */
     position: absolute;
     top: 52px;
     /* background-image: url("../Resources/dayStorm.jpg"); */
@@ -42,9 +43,9 @@ header {
     /* background-image: url(../Resources/nightStorm.jpg); */
     /* background-image: url(../Resources/nightSnow.jpg); */
     /* background-image: url(../Resources/nightClear.jpg); */
-    opacity: 0.8;
+    opacity: 0.7;
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat:repeat-y;
    
 }
 
@@ -66,7 +67,7 @@ header {
     flex-direction: column;
     justify-content: space-between;
     height: 100px;
-    margin-left: 100px;
+    margin-left: 30px;
     position: relative;
 }
 
