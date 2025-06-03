@@ -24,7 +24,7 @@ Please contact **[itismubashiratcode@gmail.com](mailto:itismubashiratcode@gmail.
 
 ## 🛠️ Technologies Used  
 - **Frontend:** HTML, CSS, JavaScript  
-- **API Integration:** Open-Meteo API (or any preferred weather API)  
+- **API Integration:** Open-Meteo API 
 - **Deployment:** GitHub Pages  
 
 ---
